@@ -110,6 +110,27 @@ function draw() {
     if (!gameRunning) drawButton(score === 0 ? "Start" : "Replay");
 }
 
+function getClosestBehindPlatform() {
+    let best = null;
+    let bestDist = Infinity;
+
+    for (let p of platforms) {
+        let dist = p.y - player.y;
+        if (dist > 0 && dist < bestDist) {
+            best = p;
+            bestDist = dist;
+        }
+    }
+    return best;
+}
+
+function respawnOnPlatform(p) {
+    player.x = p.x + p.width / 2 - player.w / 2;
+    player.y = p.y - player.h - 1;
+    player.vy = 0;
+    player.onGround = true;
+}
+
 function update() {
     platforms.forEach(p => {
         p.x -= scrollSpeed;
@@ -151,7 +172,15 @@ function update() {
     }
     player.lastOnGround = player.onGround;
 
-    if (player.y > canvas.height) gameRunning = false;
+    if (player.y > canvas.height) {
+        let safe = getClosestBehindPlatform();
+        if (safe) {
+            respawnOnPlatform(safe);
+        } else {
+            respawnOnPlatform(platforms[0]);
+        }
+        gameRunning = false;
+    }
 }
 
 function loop() {
