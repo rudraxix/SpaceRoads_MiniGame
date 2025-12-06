@@ -4,6 +4,17 @@
 
 ---
 
+## Challenges Faced during the creation of this game using HTML5, CSS and JS
+
+1. Understanding how the Canvas API draws shapes and manages screen refresh.
+2.	Managing keyboard input smoothly without lag.
+3.	Detecting collisions between the player and platforms.
+4.	Ensuring the player resets correctly after falling.
+5.	Handling game loops using requestAnimationFrame.
+6.	Balancing scroll speed, jump height, and gravity.
+7.	Troubleshooting challenges like resetting physics variables properly, fixing collision range etc.
+
+---
 ## Play Online
 
 You can play the game directly in your browser here:  
