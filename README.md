@@ -4,6 +4,13 @@
 
 ---
 
+## Play Online
+
+You can play the game directly in your browser here:  
+[**Play SpaceRoad - MiniGame**](https://rudraxix.github.io/SpaceRoads_MiniGame/)
+
+---
+
 ## Features
 
 - Neon-themed graphics with stars in the background
@@ -42,7 +49,6 @@
 
 ## How to Run
 
-1. Clone this repository:
-
-```bash
-git clone https://github.com/your-username/SpaceRoad-MiniGame.git
+1. Clone this repository
+2. Open the project folder and double-click index.html in a modern browser (Chrome, Firefox, Edge).
+3. Enjoy the Game!
